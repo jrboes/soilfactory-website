@@ -18,9 +18,10 @@
         <link rel="icon" type="image/x-icon" href='{{ "fav.ico" | relURL }}'>
 
         {{ block "style" .  }}
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
 
-        {{ with resources.Get "sass/main.scss" }}
+        {{ with resources.Get "scss/main.scss" }}
           {{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
           {{ with . | toCSS $opts }}
             {{ if hugo.IsDevelopment }}
