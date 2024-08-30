@@ -15,3 +15,5 @@ ignoreErrors = ["error-remote-getjson"]
   subscribe = "https://groups.google.com/g/soil-factory-network"
   copyright = "WEAVE Community Inc."
   copyrighturl = "https://weavecommunity.org"
+[assetDirs]
+assets = "static"
