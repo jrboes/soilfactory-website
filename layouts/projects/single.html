@@ -1,0 +1,50 @@
+{{ define "style" }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+{{ $sassTemplate := resources.Get "scss/main.scss" }}
+{{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
+
+{{ define "main" }}
+
+<div class="container banner">
+  <div class="row g-4">
+    {{ if .Params.Image }}
+    <img src="{{ .Params.Image }}" style="object-fit:cover;height:600px;">
+    {{ else }}
+    <img src="/img/header.png">
+    {{ end }}
+    <h2>{{ .Title  }}</h2>
+    {{ if .Params.Author }}
+    <p><b>{{ .Params.Author }}</b> | {{ dateFormat "January 2, 2006" .Date.Local }}</p>
+    {{ end }}
+  </div>
+</div>
+
+<div class="container-fluid bg-flax">
+  <div class="container post p-3">
+    <div class="row g-4">
+      <div class="col-12 col-lg-9">
+
+        {{ if .Params.Doc }}
+          <div style="display: flex; justify-content: center;">
+            <iframe width="800px" height="900" src="https://docs.google.com/document/d/{{ .Params.Doc }}/pub?embedded=true"></iframe>
+          </div>
+        {{ end }}
+
+        {{ .Content }}
+
+      </div>
+      <div class="col-12 col-lg-3">
+        {{ partial "sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "javascript" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+{{ end }}

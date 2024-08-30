@@ -1,0 +1,270 @@
+{{ define "main" }}
+
+<!-- Banner -->
+<div class="container banner">
+  <div class="container">
+    <div class="row align-items-center text-center" style="min-height: 200px;">
+      <div class="col-12 col-lg-4"></div>
+      <div class="col-12 col-lg-8">
+        <h1>{{ .Site.Params.description }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video -->
+<div class="container-fluid bg-flax" id="projects">
+  <div class="container p-3">
+
+    <div class="row gx-4">
+      <div class="col-12 col-sm-3">
+        <h2>Projects</h2>
+      </div>
+
+      <p>Check out our fun and cool projects, which are both cool and fun!</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-lg-11">
+        {{ partial "carousel.html" (dict "context" . "items" "1" "height" "50" "unit" "%" "duration" "7000") }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container p-3">
+  <div class="row g-4">
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body text-center">
+          <h2 class="card-title">Contribute</h2>
+          <p class="card-text" style="font-size: 20px">Help keep The Soil Factory open for the community to explore, question, & create together through art, science, & conversation by supporting on <a href="{{ .Site.Params.paypal }}" class="blink">Paypal</a>!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contribute / Follow -->
+<div class="container p-3">
+  <div class="row g-4">
+
+    <div class="col-12 col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">Our Location</h2>
+          <div class="row g-4 justify-content-center">
+            <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:300px;">
+              <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
+                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=142+Ithaca+Beer+Drive+Ithaca,+NY+14850&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                </iframe>
+              </div>
+              <a class="googlemaps-made" href="https://kbj9qpmy.com/bp" id="auth-map-data">Internet Provider</a><style>#embedded-map-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">Follow</h2>
+          <p class="card-text">Stay up to date with our commentary by following us on social media.</p>
+
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-lg btn-outline-dark btn-floating m-1" href="https://www.facebook.com/{{ .Site.Params.handle }}" role="button" title="Facebook">
+              <iconify-icon icon="simple-icons:facebook"></iconify-icon>
+            </a>
+            <a class="btn btn-lg  btn-outline-dark btn-floating m-1" href="https://twitter.com/{{ .Site.Params.handle }}" role="button" title="Twitter">
+              <iconify-icon icon="simple-icons:twitter"></iconify-icon>
+            </a>
+            <a class="btn btn-lg btn-outline-dark btn-floating m-1" href="https://www.tiktok.com/@{{ .Site.Params.handle }}" role="button" title="TikTok">
+              <iconify-icon icon="simple-icons:tiktok"></iconify-icon>
+            </a>
+          </div>
+
+          <h2 class="card-text mt-3">Contact Us</h2>
+          <p class="card-text">Get in touch with us to discuss your projects.</p>
+
+          <div class="d-grid gap-2 col-4 mx-auto">
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#contactForm">Send a Message</button>
+          </div>
+
+          <!-- Contact Form Popup -->
+          <div class="modal fade" id="contactForm" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalLabel">Contact Form</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                  <form class="row g-3">
+                    <div class="col-12">
+                      <label for="emailAddress" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="EmailAddress" placeholder="name@example.com">
+                    </div>
+                    <div class="col-12">
+                      <label for="emailBody" class="form-label">Message</label>
+                      <textarea class="form-control" id="emailBody" rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-dark" type="submit" title="Not Currently Available">Submit</button>
+                    </div>
+                  </form>
+
+                  <p><br>Or, send us an <a href="mailto:{{ .Site.Params.contact }}">email</a>.</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form Popup -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Writing -->
+<div class="container-fluid bg-gold" id="writing">
+  <div class="container p-3">
+
+    <div class="row gx-4">
+      <div class="col-3">
+        <h2>Newsletter</h2>
+      </div>
+
+      <p>Check in here for our most recent newsletter every week!</p>
+      <div class="card">
+        <div class="card-body">
+          <div style="display: flex; justify-content: center;">
+            <iframe width="800px" height="900px" src="https://docs.google.com/document/d/1jCLoxI4NGieBUZjhDnFEyAV29coRVXSlqj0dbt5wX9U/pub?embedded=true"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container p-3" id="contribute">
+  <div class="row g-4">
+
+    <div class="col-12 col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">Subscribe</h2>
+          <p class="card-text">Interested in getting our newsletter in the mail each week? Subscribe to our Google Group!</p>
+        </div>
+        <a class="btn btn-lg border-0 btn-outline-dark btn-floating m-1" href="{{ site.Params.subscribe }}" role="button" title="Subscribe on Google Groups!">
+          <iconify-icon icon="dashicons:groups" height="50"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">Donate</h2>
+          <p class="card-text">To make a donation via PayPal or credit card, click below.</p>
+        </div>
+        <a class="btn btn-lg border-0 btn-outline-dark btn-floating m-1" href="{{ site.Params.paypal }}" role="button" title="Donate on PayPal!">
+          <iconify-icon icon="simple-icons:paypal" height="50"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid bg-gold">
+  <div class="container p-3">
+
+    <div class="row gx-4">
+      <div class="col-12 col-sm-3">
+        <h2>Archives</h2>
+      </div>
+
+      <div class="col-9 text-end">
+      </div>
+
+      <p>This is a possible means of displaying archived posts, although it seems to have some bugs</p>
+
+    </div>
+    <div class="row row-cols-1 row-cols-lg-3 g-4 mt-0">
+      <iframe src="https://drive.google.com/embeddedfolderview?id=1PkZrUsrVzhghVY019szJbT5bxku4En2e&pli=1#grid" style="width:100%; height:300px; border:0;"></iframe>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Audio -->
+<div class="container-fluid bg-flax" id="calender">
+  <div class="container p-3">
+    <div class="row gx-4">
+      <div class="col-12 col-md-3">
+        <h2>Calender</h2>
+      </div>
+      <p>Possible calender widget.</p>
+      <div class="card">
+        <div class="card-body">
+          <div style="display: flex; justify-content: center;">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&bgcolor=%23cedf90&showTitle=0&showPrint=0&showCalendars=0&src=OTgxNDVjOTc0NjE5ZGI1ZTEzYjcwNDJjOTZjODNlNjg1ODdmYjUxNzU1NmIzYzNhMzJlM2JkMTIyNDJkZjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F4511E" style="border:0" width="1000" height="500" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About & Support -->
+<div class="container p-3" id="about">
+  <div class="row g-4">
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">About</h2>
+          <p class="card-text">
+            <b>The Soil Factory</b> is a vibrant community space where art, science and sustainability come together to create new collaborations, new experiences and new ideas. We celebrate experimental learning while exploring new partnerships. We are artists, students, scientists, farmers, entrepreneurs, and interested members of the community who meet to discuss, play, learn, and seek new solutions for the issues of our day. <b>We are a place where everyone is welcome.</b>
+            <br><br>
+            Founded in Ithaca, NY, in mid-2021 to serve as an experimental space to develop innovative ways of bringing a diverse group of people together to tackle the most pressing issues of our time. The Soil Factory explores art-science approaches together with the local community, policy makers, the academic community, and anyone in the Ithaca region and globally who are interested in building an unusual platform of creative engagement.
+            <br><br>
+            We are organized by <a href="https://www.weavecommunity.org">WeaveCommunity</a>, an Ithaca-based community organization. This website lists programming, links to information of those engaging with this initiative, and invites your participation.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{{ end }}
+
+{{ define "javascript" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+<script src="js/carousel.js"></script>
+<script>
+ window.onscroll = function() {resizeLogo()};
+ window.onresize = function() {resizeLogo()};
+ document.addEventListener("DOMContentLoaded", resizeLogo);
+ function resizeLogo() {
+   if (screen.width >= 992) {
+     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+       document.getElementById("logo").style.transform = "scale(1.0)";
+     } else {
+       document.getElementById("logo").style.transform = "scale(2.75)";
+     }
+   } else {
+     document.getElementById("logo").style.transform = "scale(1.0)";
+   }
+ }
+</script>
+{{ end }}

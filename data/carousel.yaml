@@ -1,0 +1,17 @@
+images: 
+
+  - image: /img/projects/multi-disciplinary-meetings.jpg
+    content_html: "Multi-Disciplinary Meetings"
+    link: /projects/multi-disciplinary-meetings
+  - image: /img/projects/residencies.jpg
+    content_html: "Residencies"
+    link: /projects/residencies
+  - image: /img/projects/exhibitions.jpg
+    content_html: "Exhibitions"
+    link: /projects/exhibitions
+  - image: /img/projects/the-marshy-garden.jpg
+    content_html: "The Marshy Garden"
+    link: /projects/the-marshy-garden
+  - image: /img/projects/movie-nights.jpg
+    content_html: "Movie Nights"
+    link: /projects/movie-nights

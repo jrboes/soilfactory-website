@@ -1,0 +1,16 @@
+baseURL = "https://jacobboes.com"
+languageCode = "en-us"
+title = "The Soil Factory"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+summaryLength = 30
+enableRobotsTXT = "true"
+ignoreErrors = ["error-remote-getjson"]
+[params]
+  description = "Exploring Art, Science, and Sustainability"
+  author = "WEAVE Community Inc."
+  paypal = "https://www.paypal.com/donate/?hosted_button_id=7MRNCBDV37CCG"
+  contact = "info@weavecommunity.org"
+  handle = "thesoilfactory"
+  subscribe = "https://groups.google.com/g/soil-factory-network"
+  copyright = "WEAVE Community Inc."
+  copyrighturl = "https://weavecommunity.org"

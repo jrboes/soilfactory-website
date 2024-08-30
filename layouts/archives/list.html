@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<div class="container banner">
+  <div class="row">
+    <h1 style="text-align:center;">{{ .Title  }}</h1>
+  </div>
+</div>
+
+<div class="container-fluid bg-gold">
+  <div class="container p-3">
+    <div class="row justify-content-around row-cols-1 row-cols-lg-3 g-4 mt-0 mb-4">
+    {{ range (where .Pages ".Params.unlisted" "!=" "true") }}
+    {{ partial "archive_cards.html" . }}
+    {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "javascript" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+{{ end }}

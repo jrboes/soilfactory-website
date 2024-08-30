@@ -1,0 +1,15 @@
+
+<footer class="bg-dark text-center text-white">
+  <div class="container p-3">
+    <section>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/{{ .Site.Params.handle }}" role="button"><iconify-icon icon="simple-icons:facebook"></iconify-icon></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/{{ .Site.Params.handle }}" role="button"><iconify-icon icon="simple-icons:twitter"></iconify-icon></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/@{{ .Site.Params.handle }}" role="button"><iconify-icon icon="simple-icons:youtube"></iconify-icon></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://{{ .Site.Params.handle }}.substack.com" role="button"><iconify-icon icon="simple-icons:substack"></iconify-icon></a>
+    </section>
+  </div>
+
+  <div class="text-center p-3" style="background-color: hsla(210, 10%, 12%, 1)">
+    Copyright {{ now.Year }}: <a href="{{ .Site.Params.Copyrighturl }}">{{ .Site.Params.Copyright }}</a>
+  </div>
+</footer>

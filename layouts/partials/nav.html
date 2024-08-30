@@ -1,0 +1,67 @@
+<div class="container-fluid" id="home" style="background-color: hsla(210, 10%, 12%, 1)">
+  <div class="container text-white p-2">
+    <div class="row gx-4 gy-2">
+      <div class="col-12 col-sm-5 text-center text-md-start">
+        <section>
+          <h1>{{ site.Title }}</h1>
+        </section>
+      </div>
+      <div class="col-12 col-sm-7 text-center text-md-end">
+        <section class="">
+          <a class="btn btn-outline-light btn-floating m-1" href="{{ site.Params.subscribe }}" role="button">
+            <iconify-icon icon="dashicons:groups"></iconify-icon> &nbsp; Subscribe!
+          </a>
+          <a class="btn btn-outline-light btn-floating m-1" href="{{ site.Params.paypal }}" role="button">
+            <iconify-icon icon="simple-icons:paypal"></iconify-icon> &nbsp; Donate!
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-dark sticky-top">
+  <nav class="navbar navbar-expand-sm navbar-dark align-items-start">
+    <div class="container">
+
+      <a class="navbar-brand" id="logo" href='{{ "#home" | relURL }}'>
+        <img src='{{ "img/logo.png" | relURL }}' width="100px" alt="{{ site.Title }}">
+      </a>
+
+      <button class="navbar-toggler align-self-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end text-end align-self-start" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href='{{ "#projects" | relURL }}'>Projects</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="navbarDropdown">Newsletter</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href='{{ "#writing" | relURL }}'>Current</a></li>
+              <li><a class="dropdown-item" href='{{ "archives" | relURL }}'>Archives</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href='{{ "#calender" | relURL }}'>Calender</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href='{{ "#contribute" | relURL }}'>Contribute</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href='{{ "#about" | relURL }}'>About</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
