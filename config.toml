@@ -1,7 +1,7 @@
 baseURL = "https://jacobboes.com"
 languageCode = "en-us"
 title = "The Soil Factory"
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 summaryLength = 30
 enableRobotsTXT = "true"
 assetDir = "/assets"
