@@ -4,6 +4,7 @@ title = "The Soil Factory"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 summaryLength = 30
 enableRobotsTXT = "true"
+assetDir = "/assets"
 ignoreErrors = ["error-remote-getjson"]
 [params]
   description = "Exploring Art, Science, and Sustainability"
