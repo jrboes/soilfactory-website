@@ -20,7 +20,7 @@
         {{ block "style" .  }}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
         {{ $sassTemplate := resources.Get "scss/main.scss" }}
-        {{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify }}
+        {{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS }}
         <link rel="stylesheet" href="{{ $style.Permalink }}">
         {{ end }}
     </head>
