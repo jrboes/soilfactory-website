@@ -21,8 +21,12 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
 
-        {{ $styles := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+        {{ with resources.Get "/sass/main.scss" }}
+          {{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
+          {{ with . | toCSS $opts | minify | fingerprint }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+          {{ end }}
+        {{ end }}
 
         {{ end }}
     </head>
